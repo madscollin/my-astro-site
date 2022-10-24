@@ -10,5 +10,5 @@ import alpinejs from "@astrojs/alpinejs";
 export default defineConfig({
     integrations: [tailwind(), alpinejs()],
     site: "https://madscollin.github.io",
-    base: "/my-astro-site",
+    base: "/sl-signature",
 });
