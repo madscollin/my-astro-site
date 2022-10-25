@@ -7,7 +7,7 @@ import Layout from "../layouts/Layout.astro";
         <h1 class="text-center mt-48 text-5xl font-extrabold">Speedline</h1>
 
         <div
-            class="text-center mt-10 p-10 max-w-lg shadow-lg bg-white mx-auto rounded-xl"
+            class="text-center mt-10 p-8 max-w-lg shadow-lg bg-white mx-auto rounded-xl"
             x-data="{ inputValue: '' }"
         >
             <div class="flex flex-col space-y-2">
@@ -21,13 +21,12 @@ import Layout from "../layouts/Layout.astro";
                 <template x-if="inputValue != 'polini'">
                     <button
                         x-on:click="alert('Wrong password')"
-                        class="w-full p-3 bg-orange-600 text-orange-50 rounded-md text-xl"
-                        >Login</button
+                        class="w-full btn-primary text-xl">Login</button
                     >
                 </template>
                 <template x-if="inputValue === 'polini'">
                     <a
-                        class="w-full p-3 bg-orange-600 text-orange-50 rounded-md text-xl"
+                        class="w-full btn-primary text-xl"
                         href="/sl-static/items-list">Login</a
                     >
                 </template>
