@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import EmailPreview from "../components/EmailPreview.astro";
 ---
 
 <Layout title="Signature generator">
@@ -117,8 +118,8 @@ import Layout from "../layouts/Layout.astro";
                 <div
                     class="border rounded-lg border-gray-300 p-8 mt-4 bg-white shadow-xl"
                 >
-                    <div class="mb-24">
-                        <img src="/mail-preview.png" />
+                    <div class="mb-32">
+                        <EmailPreview />
                     </div>
                     <div id="signature">
                         <div
