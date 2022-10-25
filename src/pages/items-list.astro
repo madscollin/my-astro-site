@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="What do you need?">
+    <main class="container mx-auto px-5 max-w-3xl">
+        <h1 class="text-center mt-48 text-5xl font-extrabold">
+            What do you need?
+        </h1>
+        <div class="mt-10">
+            <div class="grid grid-cols-2 gap-8">
+                <Card
+                    href="dummy"
+                    title="Dummy page"
+                    body="Dummy page card for test"
+                />
+                <Card
+                    href="signature"
+                    title="Signature generator"
+                    body="Generate personal email signature"
+                />
+            </div>
+        </div>
+    </main>
+</Layout>

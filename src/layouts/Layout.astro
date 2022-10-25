@@ -1,6 +1,6 @@
 ---
 export interface Props {
-	title: string;
+    title: string;
 }
 
 const { title } = Astro.props;
@@ -8,28 +8,32 @@ const { title } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+    <head>
+        <meta name="robots" content="noindex" />
+        <meta name="googlebot" content="noindex" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body class="bg-zinc-100">
+        <slot />
+        <style is:global>
+            /* Regular input field */
+            .form-input {
+                @apply w-full py-2 text-gray-700 border-gray-300 rounded-md shadow-sm bg-gray-50 focus:border-orange-500 focus:ring focus:ring-orange-500 focus:ring-opacity-20 transition-all placeholder:text-gray-400 placeholder:font-light;
+            }
+
+            /* Regular checkbox */
+            .form-checkbox {
+                @apply rounded border-gray-400 text-orange-500 shadow-sm focus:border-orange-500 focus:ring-offset-1 focus:ring-orange-500 focus:ring-opacity-20 transition-all;
+            }
+
+            /* Regular radio buttons */
+            .form-radio {
+                @apply border-gray-400 text-orange-500 shadow-sm focus:border-orange-500 focus:ring-offset-1 focus:ring-orange-500 focus:ring-opacity-20 transition-all;
+            }
+        </style>
+    </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
-</style>
