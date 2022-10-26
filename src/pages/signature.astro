@@ -16,8 +16,9 @@ import EmailPreview from "../components/EmailPreview.astro";
                 position: '',
                 email: '',
                 phone: '',
-                selectedCompany: '1'
-             
+                selectedCompany: '1',
+                socialMedia: false,
+                
               }
         }"
         class="container mx-auto px-5"
@@ -104,6 +105,26 @@ import EmailPreview from "../components/EmailPreview.astro";
                         />
                     </div>
 
+                    <div class="mt-4">
+                        <label for="signatureSocial" class="font-bold">Social Media?</label
+                        >
+                        <div class="flex items-center space-x-2">
+                        <input
+                            x-model="signature.socialMedia"
+                            type="checkbox"
+                            :value="signature.socialMedia"
+                            class="form-checkbox"
+                        />
+                        <template x-if="signature.socialMedia">
+                            <span class="font-light">Yes</span>
+                        </template>
+                        <template x-if="!signature.socialMedia">
+                            <span class="font-light">No</span>
+                        </template>
+                       
+                        </div>
+                    </div>
+
                     <button
                         class="w-full p-3 bg-orange-600 text-orange-50 rounded-md text-xl mt-6 js-copy-btn"
                     >
@@ -138,9 +159,10 @@ import EmailPreview from "../components/EmailPreview.astro";
                                         :href="'mailto:'+signature.email"
                                         x-text="signature.email"></a>
                                     <template x-if="signature.phone">
-                                        <span class="text-lg leading-3">
-                                            &bull;</span
-                                        >
+                                        <span
+                                        style="color: rgb(156 163 175); font-weight: 300; line-height: 14px; font-size: 20px; padding: 0px 4px;"
+                                        class="Apple-converted-space"
+                                        >&bull;</span>
                                     </template>
 
                                     <a
@@ -210,7 +232,169 @@ import EmailPreview from "../components/EmailPreview.astro";
                                             </td>
                                         </tr>
                                     </template>
-                           
+                                    <tr>
+                                        <td colspan="2" style="padding-top:5px;">
+                                            <template x-if="signature.selectedCompany == 1">
+                                                <a
+                                                style="color: rgb(156 163 175); font-weight: 300; line-height: 20px; font-size: 14px; text-decoration: underline;" 
+                                                href="https://speedline.dk">
+                                                www.speedline.dk
+                                            </a>
+                                            </template>
+                                            <template x-if="signature.selectedCompany == 2">
+                                                <a
+                                                style="color: rgb(156 163 175); font-weight: 300; line-height: 20px; font-size: 14px; text-decoration: underline;" 
+                                                href="https://cykelshoppen.dk">
+                                                www.cykelshoppen.dk
+                                            </a>
+                                            </template>
+                                            <template x-if="signature.selectedCompany == 3">
+                                                <div>
+                                                    <a
+                                                    style="color: rgb(156 163 175); font-weight: 300; line-height: 20px; font-size: 14px; text-decoration: underline;" 
+                                                    href="https://cykelshoppen.dk">
+                                                    www.cykelshoppen.dk
+                                                </a>
+                                                <span
+                                                style="color: rgb(156 163 175); font-weight: 300; line-height: 14px; font-size: 20px; padding: 0px 4px;"
+                                                class="Apple-converted-space"
+                                                >&bull;</span>
+                                                <a
+                                                style="color: rgb(156 163 175); font-weight: 300; line-height: 20px; font-size: 14px; text-decoration: underline;" 
+                                                href="https://speedline.dk">
+                                                www.speedline.dk
+                                            </a>
+                                                </div>
+                                               
+                                            </template>
+                                        </td>
+                                    </tr>
+                                    <template x-if="signature.socialMedia">
+                                    <tr>
+                                        <td colspan="2" style="padding-top:10px;">
+                                            <template x-if="signature.selectedCompany == 2 || signature.selectedCompany == 3">
+                                                <a
+                                                        style="
+                                                            text-decoration: none;
+                                                            color: transparent;
+                                                            margin-top: 5px;
+                                                        "
+                                                        id="facebookLink"
+                                                        class="facebook"
+                                                        href="https://www.facebook.com/cykelshoppen/"
+                                                        >
+                                                        <img
+                                                            style="display: inline"
+                                                            shrinktofit="true"
+                                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFLSURBVHgBxVWxSgNBEH2RYCPCliII+wmC2Mp16aKVxL+wsr37BTvtrLWytTGNnWD+IH5BkjqBJDO52ZActzu7XEIePO5Y3ryZvdmdA/aMVoTmhHhNvCQaWZsQB8Q+GoDNcuKYuPBwSHwmWiSiRxwFjOsSPcSa5wnGVeaaea+BueOtz9zKVkPB3Ngb0VqPhj+tqUvwqphzs88qMT5tUZdAq/5XdEa0c6UYPt44kqAM8UfNiLalaPjuoC0LVwijg/JyQZ738v4eiOGL2XcJThHG18Y7J/ggnisxq0a3EYeC+E98k8An4gUS8Aj9fH+L1kZoF+K5bvIAu8eW5zHCQy11B0Nn7HYwRTkVd4XPukVuXmiC/kn1GfTqrScx7hDXwBC7UJA3MC8QiS702VSdoB0kwhJflERjqdr4TGJ++owM5bxyI8X99H+IMxwSS1LX43LyN5itAAAAAElFTkSuQmCC"
+                                                            height="24"
+                                                            width="24"
+                                                    />
+                                                </a>
+                                            </template>
+                                            <template x-if="signature.selectedCompany == 1">
+                                                <a
+                                                        style="
+                                                            text-decoration: none;
+                                                            color: transparent;
+                                                            margin-top: 5px;
+                                                        "
+                                                        id="facebookLink"
+                                                        class="facebook"
+                                                        href="https://www.facebook.com/speedline.dk/"
+                                                        >
+                                                        <img
+                                                            style="display: inline"
+                                                            shrinktofit="true"
+                                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFLSURBVHgBxVWxSgNBEH2RYCPCliII+wmC2Mp16aKVxL+wsr37BTvtrLWytTGNnWD+IH5BkjqBJDO52ZActzu7XEIePO5Y3ryZvdmdA/aMVoTmhHhNvCQaWZsQB8Q+GoDNcuKYuPBwSHwmWiSiRxwFjOsSPcSa5wnGVeaaea+BueOtz9zKVkPB3Ngb0VqPhj+tqUvwqphzs88qMT5tUZdAq/5XdEa0c6UYPt44kqAM8UfNiLalaPjuoC0LVwijg/JyQZ738v4eiOGL2XcJThHG18Y7J/ggnisxq0a3EYeC+E98k8An4gUS8Aj9fH+L1kZoF+K5bvIAu8eW5zHCQy11B0Nn7HYwRTkVd4XPukVuXmiC/kn1GfTqrScx7hDXwBC7UJA3MC8QiS702VSdoB0kwhJflERjqdr4TGJ++owM5bxyI8X99H+IMxwSS1LX43LyN5itAAAAAElFTkSuQmCC"
+                                                            height="24"
+                                                            width="24"
+                                                    />
+                                                </a>
+                                            </template>
+                                                <span
+                                                    class="Apple-converted-space"
+                                                    >&nbsp;</span
+                                                >
+                                                <template x-if="signature.selectedCompany == 2 || signature.selectedCompany == 3">
+                                                <a
+                                                    style="
+                                                        text-decoration: none;
+                                                        color: transparent;
+                                                        margin-top: 5px;
+                                                    "
+                                                    id="instagramLink"
+                                                    class="instagram"
+                                                    href="https://www.instagram.com/cykelshoppen.dk/"
+                                                    ><img
+                                                        style="display: inline"
+                                                        shrinktofit="true"
+                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAG0SURBVHgBvZU7SwNBFIWP7yIE8hO20lQSFWtTCHbxUcUuCgY7xcbCYiNpLUylgqC9IOof0Mba+Au0tUnSCL71jHuX7O7MPsKiBz6ym5175t7ZmbvAH6svwZgMmSYFkpP/OqRJbpBCyswmbfIdwgNpEAs9qkxaEcamiZaTmts9GAex48zLKcxd5sPMLSk1WPq6PAuSJxVDjFpadzP4dtERqXruH0lRBi+RgUBCH+RUrq/hf9G7pBYYr2VSkaBXmJfijuyRCUnM+0ztvIzXvGgwyEsW6vqZbEk1WbJJnsg9qUsiwXjliX6ZYAq6XtBdlh1yTs7IFbkgB2Qc+tK5KngnyCJax+SEzEpm6n4/JibnnSBOg+Q98N9QgrjfQKVOzLhVOC9SVaF2z5oQpY53gmbIoC/5rcv1otxvoHtqVWUjhlif5zD0pqYO2CR5Q/ipVTEWnC0dPKDwVqBMGvD3km0yQ0bJCvQ1/4SzowC9B13CIPXWW4ZMKmQM5nZRhbm9WAjRAtI3uxJiZKcwryGhStBLj0It7Rx6lEUOYyZqS9a5MJMkH32lIpx+5bYU96N/C/2E/69+AIv41/sBum+uAAAAAElFTkSuQmCC"
+                                                        height="24"
+                                                        width="24"
+                                                /></a>
+                                            </template>
+                                            <template x-if="signature.selectedCompany == 1">
+                                                <a
+                                                    style="
+                                                        text-decoration: none;
+                                                        color: transparent;
+                                                        margin-top: 5px;
+                                                    "
+                                                    id="instagramLink"
+                                                    class="instagram"
+                                                    href="https://www.instagram.com/speedlineofficial/"
+                                                    ><img
+                                                        style="display: inline"
+                                                        shrinktofit="true"
+                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAG0SURBVHgBvZU7SwNBFIWP7yIE8hO20lQSFWtTCHbxUcUuCgY7xcbCYiNpLUylgqC9IOof0Mba+Au0tUnSCL71jHuX7O7MPsKiBz6ym5175t7ZmbvAH6svwZgMmSYFkpP/OqRJbpBCyswmbfIdwgNpEAs9qkxaEcamiZaTmts9GAex48zLKcxd5sPMLSk1WPq6PAuSJxVDjFpadzP4dtERqXruH0lRBi+RgUBCH+RUrq/hf9G7pBYYr2VSkaBXmJfijuyRCUnM+0ztvIzXvGgwyEsW6vqZbEk1WbJJnsg9qUsiwXjliX6ZYAq6XtBdlh1yTs7IFbkgB2Qc+tK5KngnyCJax+SEzEpm6n4/JibnnSBOg+Q98N9QgrjfQKVOzLhVOC9SVaF2z5oQpY53gmbIoC/5rcv1otxvoHtqVWUjhlif5zD0pqYO2CR5Q/ipVTEWnC0dPKDwVqBMGvD3km0yQ0bJCvQ1/4SzowC9B13CIPXWW4ZMKmQM5nZRhbm9WAjRAtI3uxJiZKcwryGhStBLj0It7Rx6lEUOYyZqS9a5MJMkH32lIpx+5bYU96N/C/2E/69+AIv41/sBum+uAAAAAElFTkSuQmCC"
+                                                        height="24"
+                                                        width="24"
+                                                /></a>
+                                            </template>
+                                                <span
+                                                    class="Apple-converted-space"
+                                                    >&nbsp;</span
+                                                >
+                                                <template x-if="signature.selectedCompany == 2 || signature.selectedCompany == 3">
+                                                <a
+                                                    style="
+                                                        text-decoration: none;
+                                                        color: transparent;
+                                                        margin-top: 5px;
+                                                    "
+                                                    id="youtubeLink"
+                                                    class="youtube"
+                                                    href="https://www.youtube.com/channel/UCRgluNuFmGz8VVFnhDgfe_Q"
+                                                    ><img
+                                                        style="display: inline"
+                                                        shrinktofit="true"
+                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFYSURBVHgBxZU9SgRBEIWfPwiyiIOY20cYEQ2XAQOz1XDNPII3aFNDMzPBG3gCTYz1AuLiAZw1VAOtcrqh7f9mdtkHH8POVr2aqS5qgDlrKSNmQOwTNVGpe1PimXhAD7GZJFriJ8ArcUUIFGpMvEeMfYVOc81lgbGNTJmPe5hrjkPmQr1q3wLcWj0MWDEKXBKHnsITdFPj48M0U1onPuGZMPvpeQy3kZYgnqxcnryBGdTAfdVdy6iKFBl68hv+Y1kF7HmSWuv3OXED/8y/ee7VZoEN5OmMuFfXlCqzQIk4cTM3eFVdp5nxt+ha1WbE/vNs4B7S0EqIHfIBAoestQZ3qfHoCaS1RbzA3U1/0i36QrcVpZFYq8AJ4tqBu/bvfIHcgpINGtusAgGdzKDACAnJHuYXyNQIZZuVW3uEQgniOlGoVU8dHOGcjz6rQbev9ErRH/1H4huL1C/ZiNH1s1MZGgAAAABJRU5ErkJggg=="
+                                                        height="24"
+                                                        width="24"
+                                                /></a>
+                                            </template>
+                                            <template x-if="signature.selectedCompany == 1">
+                                                <a
+                                                    style="
+                                                        text-decoration: none;
+                                                        color: transparent;
+                                                        margin-top: 5px;
+                                                    "
+                                                    id="youtubeLink"
+                                                    class="youtube"
+                                                    href="https://www.youtube.com/user/SpeedlineDK"
+                                                    ><img
+                                                        style="display: inline"
+                                                        shrinktofit="true"
+                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFYSURBVHgBxZU9SgRBEIWfPwiyiIOY20cYEQ2XAQOz1XDNPII3aFNDMzPBG3gCTYz1AuLiAZw1VAOtcrqh7f9mdtkHH8POVr2aqS5qgDlrKSNmQOwTNVGpe1PimXhAD7GZJFriJ8ArcUUIFGpMvEeMfYVOc81lgbGNTJmPe5hrjkPmQr1q3wLcWj0MWDEKXBKHnsITdFPj48M0U1onPuGZMPvpeQy3kZYgnqxcnryBGdTAfdVdy6iKFBl68hv+Y1kF7HmSWuv3OXED/8y/ee7VZoEN5OmMuFfXlCqzQIk4cTM3eFVdp5nxt+ha1WbE/vNs4B7S0EqIHfIBAoestQZ3qfHoCaS1RbzA3U1/0i36QrcVpZFYq8AJ4tqBu/bvfIHcgpINGtusAgGdzKDACAnJHuYXyNQIZZuVW3uEQgniOlGoVU8dHOGcjz6rQbev9ErRH/1H4huL1C/ZiNH1s1MZGgAAAABJRU5ErkJggg=="
+                                                        height="24"
+                                                        width="24"
+                                                /></a>
+                                            </template>
+                                        </td>
+                                    </tr>
+                                </template>
                         </tbody>
                     </table>
 
