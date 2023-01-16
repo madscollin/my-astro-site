@@ -165,11 +165,14 @@ import EmailPreview from "../components/EmailPreview.astro";
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
+                                <td
+                                    colspan="2"
+                                    style="padding-bottom:10px; border:hidden;"
+                                >
                                     <a
                                         :href="'mailto:'+signature.email"
                                         x-text="signature.email"
-                                        style="color: rgb(156 163 175); font-weight: 300; line-height: 20px; font-size: 14px; padding-bottom: 10px; border:hidden;"
+                                        style="color: rgb(156 163 175); font-weight: 300; line-height: 20px; font-size: 14px; border:hidden;"
                                     >
                                     </a>
                                     <template x-if="signature.phone">
@@ -182,7 +185,7 @@ import EmailPreview from "../components/EmailPreview.astro";
 
                                     <a
                                         :href="'tel:'+signature.phone"
-                                        style="color: rgb(156 163 175); font-weight: 300; line-height: 20px; font-size: 14px; padding-bottom: 10px; border:hidden;"
+                                        style="color: rgb(156 163 175); font-weight: 300; line-height: 20px; font-size: 14px; border:hidden;"
                                         x-text="signature.phone"></a>
                                 </td>
                             </tr>
@@ -292,7 +295,7 @@ import EmailPreview from "../components/EmailPreview.astro";
                                     <template
                                         x-if="signature.selectedCompany == 3"
                                     >
-                                        <div>
+                                        <span>
                                             <a
                                                 style="color: rgb(156 163 175); font-weight: 300; line-height: 20px; font-size: 14px; text-decoration: underline; border:hidden;"
                                                 href="https://cykelshoppen.dk"
@@ -310,7 +313,7 @@ import EmailPreview from "../components/EmailPreview.astro";
                                             >
                                                 www.speedline.dk
                                             </a>
-                                        </div>
+                                        </span>
                                     </template>
                                 </td>
                             </tr>
