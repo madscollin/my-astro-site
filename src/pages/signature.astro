@@ -106,22 +106,22 @@ import EmailPreview from "../components/EmailPreview.astro";
                     </div>
 
                     <div class="mt-4">
-                        <label for="signatureSocial" class="font-bold">Social Media?</label
+                        <label for="signatureSocial" class="font-bold"
+                            >Social Media?</label
                         >
                         <div class="flex items-center space-x-2">
-                        <input
-                            x-model="signature.socialMedia"
-                            type="checkbox"
-                            :value="signature.socialMedia"
-                            class="form-checkbox"
-                        />
-                        <template x-if="signature.socialMedia">
-                            <span class="font-light">Yes</span>
-                        </template>
-                        <template x-if="!signature.socialMedia">
-                            <span class="font-light">No</span>
-                        </template>
-                       
+                            <input
+                                x-model="signature.socialMedia"
+                                type="checkbox"
+                                :value="signature.socialMedia"
+                                class="form-checkbox"
+                            />
+                            <template x-if="signature.socialMedia">
+                                <span class="font-light">Yes</span>
+                            </template>
+                            <template x-if="!signature.socialMedia">
+                                <span class="font-light">No</span>
+                            </template>
                         </div>
                     </div>
 
@@ -143,258 +143,326 @@ import EmailPreview from "../components/EmailPreview.astro";
                         <EmailPreview />
                     </div>
 
-                    <table id="signature">
+                    <table
+                        id="signature"
+                        style="border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border: 0px; border: hidden;"
+                    >
                         <tbody>
                             <tr>
-                                <td style="color: rgb(55 65 81); font-weight: 700; line-height: 28px; font-size: 18px;" colspan="2" x-text="signature.name">   
+                                <td
+                                    style="color: rgb(55 65 81); font-weight: 700; line-height: 28px; font-size: 18px; border:hidden;"
+                                    colspan="2"
+                                    x-text="signature.name"
+                                >
                                 </td>
                             </tr>
                             <tr>
-                                <td style="color: rgb(156 163 175); font-weight: 300; line-height: 20px; font-size: 14px !important;" colspan="2" x-text="signature.position">
+                                <td
+                                    style="color: rgb(156 163 175); font-weight: 300; line-height: 20px; font-size: 14px !important; border:hidden;"
+                                    colspan="2"
+                                    x-text="signature.position"
+                                >
                                 </td>
                             </tr>
                             <tr>
-                                <td style="color: rgb(156 163 175); font-weight: 300; line-height: 20px; font-size: 14px; padding-bottom: 10px;" colspan="2" >
+                                <td colspan="2">
                                     <a
                                         :href="'mailto:'+signature.email"
-                                        x-text="signature.email"></a>
+                                        x-text="signature.email"
+                                        style="color: rgb(156 163 175); font-weight: 300; line-height: 20px; font-size: 14px; padding-bottom: 10px; border:hidden;"
+                                    >
+                                    </a>
                                     <template x-if="signature.phone">
                                         <span
-                                        style="color: rgb(156 163 175); font-weight: 300; line-height: 14px; font-size: 20px; padding: 0px 4px;"
-                                        class="Apple-converted-space"
-                                        >&bull;</span>
+                                            style="color: rgb(156 163 175); font-weight: 300; line-height: 14px; font-size: 20px; padding: 0px 4px;"
+                                            class="Apple-converted-space"
+                                            >&bull;</span
+                                        >
                                     </template>
 
                                     <a
                                         :href="'tel:'+signature.phone"
+                                        style="color: rgb(156 163 175); font-weight: 300; line-height: 20px; font-size: 14px; padding-bottom: 10px; border:hidden;"
                                         x-text="signature.phone"></a>
                                 </td>
                             </tr>
                             <template x-if="signature.selectedCompany == 1">
                                 <tr>
-                                    <td colspan="2">
-                                        <div style="background-color:#f97516; height:2px; width:100%;"></div>    
-                                    </td>
+                                    <td
+                                        colspan="2"
+                                        style="background-color:#f97516; line-height:2px; border:hidden;"
+                                    ></td>
                                 </tr>
                             </template>
                             <template x-if="signature.selectedCompany == 2">
                                 <tr>
-                                    <td colspan="2">
-                                        <div style="background-color:#10b981; height:2px; width:100%;"></div>    
+                                    <td
+                                        colspan="2"
+                                        style="background-color:#10b981; line-height:2px; border:hidden;"
+                                    >
                                     </td>
                                 </tr>
                             </template>
                             <template x-if="signature.selectedCompany == 3">
                                 <tr>
-                                    <td>
-                                        <div style="background-color:#10b981; height:2px; width:100%;"></div>    
+                                    <td
+                                        style="background-color:#10b981; line-height:2px; border:hidden;"
+                                    >
                                     </td>
-                                    <td>
-                                        <div style="background-color:#f97516; height:2px; width:100%;"></div>    
+                                    <td
+                                        style="background-color:#f97516; line-height:2px; border:hidden;"
+                                    >
                                     </td>
                                 </tr>
                             </template>
-                           
-                               
-                                    <template x-if="signature.selectedCompany == 1">
-                                        <tr>
-                                        <td colspan="2" style="padding-top: 16px;">
+
+                            <template x-if="signature.selectedCompany == 1">
+                                <tr>
+                                    <td
+                                        colspan="2"
+                                        style="padding-top: 16px; border:hidden;"
+                                    >
                                         <img
                                             src="data:image/png;base64,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"
                                         />
-                                        </td>
-                                        </tr>
-                                    </template>
-                                    <template x-if="signature.selectedCompany == 2">
-                                        <tr>
-                                        <td colspan="2" style="padding-top: 16px;">
+                                    </td>
+                                </tr>
+                            </template>
+                            <template x-if="signature.selectedCompany == 2">
+                                <tr>
+                                    <td
+                                        colspan="2"
+                                        style="padding-top: 16px; border:hidden;"
+                                    >
                                         <img
                                             src="data:image/png;base64,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"
                                         />
-                                        </td>
-                                    </tr>
+                                    </td>
+                                </tr>
+                            </template>
+                            <template x-if="signature.selectedCompany == 3">
+                                <tr>
+                                    <td
+                                        colspan="2"
+                                        style="padding-top: 16px; border:hidden;"
+                                    >
+                                        <img
+                                            src="data:image/png;base64,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"
+                                        />
+                                    </td>
+                                </tr>
+                            </template>
+                            <template x-if="signature.selectedCompany == 3">
+                                <tr>
+                                    <td
+                                        colspan="2"
+                                        style="padding-top: 8px; border:hidden;"
+                                    >
+                                        <img
+                                            src="data:image/png;base64,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"
+                                        />
+                                    </td>
+                                </tr>
+                            </template>
+                            <tr>
+                                <td
+                                    colspan="2"
+                                    style="padding-top:5px; border:hidden;"
+                                >
+                                    <template
+                                        x-if="signature.selectedCompany == 1"
+                                    >
+                                        <a
+                                            style="color: rgb(156 163 175); font-weight: 300; line-height: 20px; font-size: 14px; text-decoration: underline; border:hidden;"
+                                            href="https://speedline.dk"
+                                        >
+                                            www.speedline.dk
+                                        </a>
                                     </template>
-                                    <template x-if="signature.selectedCompany == 3">
-                                        <tr>
-                                        <td colspan="2" style="padding-top: 16px;">
-                                            <img
-                                                src="data:image/png;base64,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"
-                                            />
-                                            </td>
-                                            </tr>
-                                            </template>
-                                            <template x-if="signature.selectedCompany == 3">
-                                            <tr>
-                                            <td colspan="2"  style="padding-top: 8px;">
-                                            <img
-                                                src="data:image/png;base64,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"
-                                            />
-                                            </td>
-                                        </tr>
+                                    <template
+                                        x-if="signature.selectedCompany == 2"
+                                    >
+                                        <a
+                                            style="color: rgb(156 163 175); font-weight: 300; line-height: 20px; font-size: 14px; text-decoration: underline; border:hidden;"
+                                            href="https://cykelshoppen.dk"
+                                        >
+                                            www.cykelshoppen.dk
+                                        </a>
                                     </template>
-                                    <tr>
-                                        <td colspan="2" style="padding-top:5px;">
-                                            <template x-if="signature.selectedCompany == 1">
-                                                <a
-                                                style="color: rgb(156 163 175); font-weight: 300; line-height: 20px; font-size: 14px; text-decoration: underline;" 
-                                                href="https://speedline.dk">
-                                                www.speedline.dk
-                                            </a>
-                                            </template>
-                                            <template x-if="signature.selectedCompany == 2">
-                                                <a
-                                                style="color: rgb(156 163 175); font-weight: 300; line-height: 20px; font-size: 14px; text-decoration: underline;" 
-                                                href="https://cykelshoppen.dk">
+                                    <template
+                                        x-if="signature.selectedCompany == 3"
+                                    >
+                                        <div>
+                                            <a
+                                                style="color: rgb(156 163 175); font-weight: 300; line-height: 20px; font-size: 14px; text-decoration: underline; border:hidden;"
+                                                href="https://cykelshoppen.dk"
+                                            >
                                                 www.cykelshoppen.dk
                                             </a>
-                                            </template>
-                                            <template x-if="signature.selectedCompany == 3">
-                                                <div>
-                                                    <a
-                                                    style="color: rgb(156 163 175); font-weight: 300; line-height: 20px; font-size: 14px; text-decoration: underline;" 
-                                                    href="https://cykelshoppen.dk">
-                                                    www.cykelshoppen.dk
-                                                </a>
-                                                <span
-                                                style="color: rgb(156 163 175); font-weight: 300; line-height: 14px; font-size: 20px; padding: 0px 4px;"
+                                            <span
+                                                style="color: rgb(156 163 175); font-weight: 300; line-height: 14px; font-size: 20px; padding: 0px 4px; border:hidden;"
                                                 class="Apple-converted-space"
-                                                >&bull;</span>
-                                                <a
-                                                style="color: rgb(156 163 175); font-weight: 300; line-height: 20px; font-size: 14px; text-decoration: underline;" 
-                                                href="https://speedline.dk">
+                                                >&bull;</span
+                                            >
+                                            <a
+                                                style="color: rgb(156 163 175); font-weight: 300; line-height: 20px; font-size: 14px; text-decoration: underline; border:hidden;"
+                                                href="https://speedline.dk"
+                                            >
                                                 www.speedline.dk
                                             </a>
-                                                </div>
-                                               
-                                            </template>
-                                        </td>
-                                    </tr>
-                                    <template x-if="signature.socialMedia">
-                                    <tr>
-                                        <td colspan="2" style="padding-top:10px;">
-                                            <template x-if="signature.selectedCompany == 2 || signature.selectedCompany == 3">
-                                                <a
-                                                        style="
+                                        </div>
+                                    </template>
+                                </td>
+                            </tr>
+                            <template x-if="signature.socialMedia">
+                                <tr>
+                                    <td
+                                        colspan="2"
+                                        style="padding-top:10px; border:hidden;"
+                                    >
+                                        <template
+                                            x-if="signature.selectedCompany == 2 || signature.selectedCompany == 3"
+                                        >
+                                            <a
+                                                style="
                                                             text-decoration: none;
                                                             color: transparent;
                                                             margin-top: 5px;
+                                                            border:hidden;
                                                         "
-                                                        id="facebookLink"
-                                                        class="facebook"
-                                                        href="https://www.facebook.com/cykelshoppen/"
-                                                        >
-                                                        <img
-                                                            style="display: inline"
-                                                            shrinktofit="true"
-                                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFLSURBVHgBxVWxSgNBEH2RYCPCliII+wmC2Mp16aKVxL+wsr37BTvtrLWytTGNnWD+IH5BkjqBJDO52ZActzu7XEIePO5Y3ryZvdmdA/aMVoTmhHhNvCQaWZsQB8Q+GoDNcuKYuPBwSHwmWiSiRxwFjOsSPcSa5wnGVeaaea+BueOtz9zKVkPB3Ngb0VqPhj+tqUvwqphzs88qMT5tUZdAq/5XdEa0c6UYPt44kqAM8UfNiLalaPjuoC0LVwijg/JyQZ738v4eiOGL2XcJThHG18Y7J/ggnisxq0a3EYeC+E98k8An4gUS8Aj9fH+L1kZoF+K5bvIAu8eW5zHCQy11B0Nn7HYwRTkVd4XPukVuXmiC/kn1GfTqrScx7hDXwBC7UJA3MC8QiS702VSdoB0kwhJflERjqdr4TGJ++owM5bxyI8X99H+IMxwSS1LX43LyN5itAAAAAElFTkSuQmCC"
-                                                            height="24"
-                                                            width="24"
-                                                    />
-                                                </a>
-                                            </template>
-                                            <template x-if="signature.selectedCompany == 1">
-                                                <a
-                                                        style="
+                                                id="facebookLink"
+                                                class="facebook"
+                                                href="https://www.facebook.com/cykelshoppen/"
+                                            >
+                                                <img
+                                                    style="display: inline; border:hidden;"
+                                                    shrinktofit="true"
+                                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFLSURBVHgBxVWxSgNBEH2RYCPCliII+wmC2Mp16aKVxL+wsr37BTvtrLWytTGNnWD+IH5BkjqBJDO52ZActzu7XEIePO5Y3ryZvdmdA/aMVoTmhHhNvCQaWZsQB8Q+GoDNcuKYuPBwSHwmWiSiRxwFjOsSPcSa5wnGVeaaea+BueOtz9zKVkPB3Ngb0VqPhj+tqUvwqphzs88qMT5tUZdAq/5XdEa0c6UYPt44kqAM8UfNiLalaPjuoC0LVwijg/JyQZ738v4eiOGL2XcJThHG18Y7J/ggnisxq0a3EYeC+E98k8An4gUS8Aj9fH+L1kZoF+K5bvIAu8eW5zHCQy11B0Nn7HYwRTkVd4XPukVuXmiC/kn1GfTqrScx7hDXwBC7UJA3MC8QiS702VSdoB0kwhJflERjqdr4TGJ++owM5bxyI8X99H+IMxwSS1LX43LyN5itAAAAAElFTkSuQmCC"
+                                                    height="24"
+                                                    width="24"
+                                                />
+                                            </a>
+                                        </template>
+                                        <template
+                                            x-if="signature.selectedCompany == 1"
+                                        >
+                                            <a
+                                                style="
                                                             text-decoration: none;
                                                             color: transparent;
                                                             margin-top: 5px;
+                                                            border:hidden;
                                                         "
-                                                        id="facebookLink"
-                                                        class="facebook"
-                                                        href="https://www.facebook.com/speedline.dk/"
-                                                        >
-                                                        <img
-                                                            style="display: inline"
-                                                            shrinktofit="true"
-                                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFLSURBVHgBxVWxSgNBEH2RYCPCliII+wmC2Mp16aKVxL+wsr37BTvtrLWytTGNnWD+IH5BkjqBJDO52ZActzu7XEIePO5Y3ryZvdmdA/aMVoTmhHhNvCQaWZsQB8Q+GoDNcuKYuPBwSHwmWiSiRxwFjOsSPcSa5wnGVeaaea+BueOtz9zKVkPB3Ngb0VqPhj+tqUvwqphzs88qMT5tUZdAq/5XdEa0c6UYPt44kqAM8UfNiLalaPjuoC0LVwijg/JyQZ738v4eiOGL2XcJThHG18Y7J/ggnisxq0a3EYeC+E98k8An4gUS8Aj9fH+L1kZoF+K5bvIAu8eW5zHCQy11B0Nn7HYwRTkVd4XPukVuXmiC/kn1GfTqrScx7hDXwBC7UJA3MC8QiS702VSdoB0kwhJflERjqdr4TGJ++owM5bxyI8X99H+IMxwSS1LX43LyN5itAAAAAElFTkSuQmCC"
-                                                            height="24"
-                                                            width="24"
-                                                    />
-                                                </a>
-                                            </template>
-                                                <span
-                                                    class="Apple-converted-space"
-                                                    >&nbsp;</span
-                                                >
-                                                <template x-if="signature.selectedCompany == 2 || signature.selectedCompany == 3">
-                                                <a
-                                                    style="
+                                                id="facebookLink"
+                                                class="facebook"
+                                                href="https://www.facebook.com/speedline.dk/"
+                                            >
+                                                <img
+                                                    style="display: inline; border:hidden;"
+                                                    shrinktofit="true"
+                                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFLSURBVHgBxVWxSgNBEH2RYCPCliII+wmC2Mp16aKVxL+wsr37BTvtrLWytTGNnWD+IH5BkjqBJDO52ZActzu7XEIePO5Y3ryZvdmdA/aMVoTmhHhNvCQaWZsQB8Q+GoDNcuKYuPBwSHwmWiSiRxwFjOsSPcSa5wnGVeaaea+BueOtz9zKVkPB3Ngb0VqPhj+tqUvwqphzs88qMT5tUZdAq/5XdEa0c6UYPt44kqAM8UfNiLalaPjuoC0LVwijg/JyQZ738v4eiOGL2XcJThHG18Y7J/ggnisxq0a3EYeC+E98k8An4gUS8Aj9fH+L1kZoF+K5bvIAu8eW5zHCQy11B0Nn7HYwRTkVd4XPukVuXmiC/kn1GfTqrScx7hDXwBC7UJA3MC8QiS702VSdoB0kwhJflERjqdr4TGJ++owM5bxyI8X99H+IMxwSS1LX43LyN5itAAAAAElFTkSuQmCC"
+                                                    height="24"
+                                                    width="24"
+                                                />
+                                            </a>
+                                        </template>
+                                        <span class="Apple-converted-space"
+                                            >&nbsp;</span
+                                        >
+                                        <template
+                                            x-if="signature.selectedCompany == 2 || signature.selectedCompany == 3"
+                                        >
+                                            <a
+                                                style="
                                                         text-decoration: none;
                                                         color: transparent;
                                                         margin-top: 5px;
+                                                        border:hidden;
                                                     "
-                                                    id="instagramLink"
-                                                    class="instagram"
-                                                    href="https://www.instagram.com/cykelshoppen.dk/"
-                                                    ><img
-                                                        style="display: inline"
-                                                        shrinktofit="true"
-                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAG0SURBVHgBvZU7SwNBFIWP7yIE8hO20lQSFWtTCHbxUcUuCgY7xcbCYiNpLUylgqC9IOof0Mba+Au0tUnSCL71jHuX7O7MPsKiBz6ym5175t7ZmbvAH6svwZgMmSYFkpP/OqRJbpBCyswmbfIdwgNpEAs9qkxaEcamiZaTmts9GAex48zLKcxd5sPMLSk1WPq6PAuSJxVDjFpadzP4dtERqXruH0lRBi+RgUBCH+RUrq/hf9G7pBYYr2VSkaBXmJfijuyRCUnM+0ztvIzXvGgwyEsW6vqZbEk1WbJJnsg9qUsiwXjliX6ZYAq6XtBdlh1yTs7IFbkgB2Qc+tK5KngnyCJax+SEzEpm6n4/JibnnSBOg+Q98N9QgrjfQKVOzLhVOC9SVaF2z5oQpY53gmbIoC/5rcv1otxvoHtqVWUjhlif5zD0pqYO2CR5Q/ipVTEWnC0dPKDwVqBMGvD3km0yQ0bJCvQ1/4SzowC9B13CIPXWW4ZMKmQM5nZRhbm9WAjRAtI3uxJiZKcwryGhStBLj0It7Rx6lEUOYyZqS9a5MJMkH32lIpx+5bYU96N/C/2E/69+AIv41/sBum+uAAAAAElFTkSuQmCC"
-                                                        height="24"
-                                                        width="24"
-                                                /></a>
-                                            </template>
-                                            <template x-if="signature.selectedCompany == 1">
-                                                <a
-                                                    style="
+                                                id="instagramLink"
+                                                class="instagram"
+                                                href="https://www.instagram.com/cykelshoppen.dk/"
+                                                ><img
+                                                    style="display: inline; border:hidden;"
+                                                    shrinktofit="true"
+                                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAG0SURBVHgBvZU7SwNBFIWP7yIE8hO20lQSFWtTCHbxUcUuCgY7xcbCYiNpLUylgqC9IOof0Mba+Au0tUnSCL71jHuX7O7MPsKiBz6ym5175t7ZmbvAH6svwZgMmSYFkpP/OqRJbpBCyswmbfIdwgNpEAs9qkxaEcamiZaTmts9GAex48zLKcxd5sPMLSk1WPq6PAuSJxVDjFpadzP4dtERqXruH0lRBi+RgUBCH+RUrq/hf9G7pBYYr2VSkaBXmJfijuyRCUnM+0ztvIzXvGgwyEsW6vqZbEk1WbJJnsg9qUsiwXjliX6ZYAq6XtBdlh1yTs7IFbkgB2Qc+tK5KngnyCJax+SEzEpm6n4/JibnnSBOg+Q98N9QgrjfQKVOzLhVOC9SVaF2z5oQpY53gmbIoC/5rcv1otxvoHtqVWUjhlif5zD0pqYO2CR5Q/ipVTEWnC0dPKDwVqBMGvD3km0yQ0bJCvQ1/4SzowC9B13CIPXWW4ZMKmQM5nZRhbm9WAjRAtI3uxJiZKcwryGhStBLj0It7Rx6lEUOYyZqS9a5MJMkH32lIpx+5bYU96N/C/2E/69+AIv41/sBum+uAAAAAElFTkSuQmCC"
+                                                    height="24"
+                                                    width="24"
+                                                />
+                                            </a>
+                                        </template>
+                                        <template
+                                            x-if="signature.selectedCompany == 1"
+                                        >
+                                            <a
+                                                style="
                                                         text-decoration: none;
                                                         color: transparent;
                                                         margin-top: 5px;
+                                                        border:hidden;
                                                     "
-                                                    id="instagramLink"
-                                                    class="instagram"
-                                                    href="https://www.instagram.com/speedlineofficial/"
-                                                    ><img
-                                                        style="display: inline"
-                                                        shrinktofit="true"
-                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAG0SURBVHgBvZU7SwNBFIWP7yIE8hO20lQSFWtTCHbxUcUuCgY7xcbCYiNpLUylgqC9IOof0Mba+Au0tUnSCL71jHuX7O7MPsKiBz6ym5175t7ZmbvAH6svwZgMmSYFkpP/OqRJbpBCyswmbfIdwgNpEAs9qkxaEcamiZaTmts9GAex48zLKcxd5sPMLSk1WPq6PAuSJxVDjFpadzP4dtERqXruH0lRBi+RgUBCH+RUrq/hf9G7pBYYr2VSkaBXmJfijuyRCUnM+0ztvIzXvGgwyEsW6vqZbEk1WbJJnsg9qUsiwXjliX6ZYAq6XtBdlh1yTs7IFbkgB2Qc+tK5KngnyCJax+SEzEpm6n4/JibnnSBOg+Q98N9QgrjfQKVOzLhVOC9SVaF2z5oQpY53gmbIoC/5rcv1otxvoHtqVWUjhlif5zD0pqYO2CR5Q/ipVTEWnC0dPKDwVqBMGvD3km0yQ0bJCvQ1/4SzowC9B13CIPXWW4ZMKmQM5nZRhbm9WAjRAtI3uxJiZKcwryGhStBLj0It7Rx6lEUOYyZqS9a5MJMkH32lIpx+5bYU96N/C/2E/69+AIv41/sBum+uAAAAAElFTkSuQmCC"
-                                                        height="24"
-                                                        width="24"
-                                                /></a>
-                                            </template>
-                                                <span
-                                                    class="Apple-converted-space"
-                                                    >&nbsp;</span
-                                                >
-                                                <template x-if="signature.selectedCompany == 2 || signature.selectedCompany == 3">
-                                                <a
-                                                    style="
+                                                id="instagramLink"
+                                                class="instagram"
+                                                href="https://www.instagram.com/speedlineofficial/"
+                                                ><img
+                                                    style="display: inline; border:hidden;"
+                                                    shrinktofit="true"
+                                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAG0SURBVHgBvZU7SwNBFIWP7yIE8hO20lQSFWtTCHbxUcUuCgY7xcbCYiNpLUylgqC9IOof0Mba+Au0tUnSCL71jHuX7O7MPsKiBz6ym5175t7ZmbvAH6svwZgMmSYFkpP/OqRJbpBCyswmbfIdwgNpEAs9qkxaEcamiZaTmts9GAex48zLKcxd5sPMLSk1WPq6PAuSJxVDjFpadzP4dtERqXruH0lRBi+RgUBCH+RUrq/hf9G7pBYYr2VSkaBXmJfijuyRCUnM+0ztvIzXvGgwyEsW6vqZbEk1WbJJnsg9qUsiwXjliX6ZYAq6XtBdlh1yTs7IFbkgB2Qc+tK5KngnyCJax+SEzEpm6n4/JibnnSBOg+Q98N9QgrjfQKVOzLhVOC9SVaF2z5oQpY53gmbIoC/5rcv1otxvoHtqVWUjhlif5zD0pqYO2CR5Q/ipVTEWnC0dPKDwVqBMGvD3km0yQ0bJCvQ1/4SzowC9B13CIPXWW4ZMKmQM5nZRhbm9WAjRAtI3uxJiZKcwryGhStBLj0It7Rx6lEUOYyZqS9a5MJMkH32lIpx+5bYU96N/C/2E/69+AIv41/sBum+uAAAAAElFTkSuQmCC"
+                                                    height="24"
+                                                    width="24"
+                                                />
+                                            </a>
+                                        </template>
+                                        <span class="Apple-converted-space"
+                                            >&nbsp;</span
+                                        >
+                                        <template
+                                            x-if="signature.selectedCompany == 2 || signature.selectedCompany == 3"
+                                        >
+                                            <a
+                                                style="
                                                         text-decoration: none;
                                                         color: transparent;
                                                         margin-top: 5px;
+                                                        border:hidden;
                                                     "
-                                                    id="youtubeLink"
-                                                    class="youtube"
-                                                    href="https://www.youtube.com/channel/UCRgluNuFmGz8VVFnhDgfe_Q"
-                                                    ><img
-                                                        style="display: inline"
-                                                        shrinktofit="true"
-                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFYSURBVHgBxZU9SgRBEIWfPwiyiIOY20cYEQ2XAQOz1XDNPII3aFNDMzPBG3gCTYz1AuLiAZw1VAOtcrqh7f9mdtkHH8POVr2aqS5qgDlrKSNmQOwTNVGpe1PimXhAD7GZJFriJ8ArcUUIFGpMvEeMfYVOc81lgbGNTJmPe5hrjkPmQr1q3wLcWj0MWDEKXBKHnsITdFPj48M0U1onPuGZMPvpeQy3kZYgnqxcnryBGdTAfdVdy6iKFBl68hv+Y1kF7HmSWuv3OXED/8y/ee7VZoEN5OmMuFfXlCqzQIk4cTM3eFVdp5nxt+ha1WbE/vNs4B7S0EqIHfIBAoestQZ3qfHoCaS1RbzA3U1/0i36QrcVpZFYq8AJ4tqBu/bvfIHcgpINGtusAgGdzKDACAnJHuYXyNQIZZuVW3uEQgniOlGoVU8dHOGcjz6rQbev9ErRH/1H4huL1C/ZiNH1s1MZGgAAAABJRU5ErkJggg=="
-                                                        height="24"
-                                                        width="24"
-                                                /></a>
-                                            </template>
-                                            <template x-if="signature.selectedCompany == 1">
-                                                <a
-                                                    style="
+                                                id="youtubeLink"
+                                                class="youtube"
+                                                href="https://www.youtube.com/channel/UCRgluNuFmGz8VVFnhDgfe_Q"
+                                                ><img
+                                                    style="display: inline; border:hidden;"
+                                                    shrinktofit="true"
+                                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFYSURBVHgBxZU9SgRBEIWfPwiyiIOY20cYEQ2XAQOz1XDNPII3aFNDMzPBG3gCTYz1AuLiAZw1VAOtcrqh7f9mdtkHH8POVr2aqS5qgDlrKSNmQOwTNVGpe1PimXhAD7GZJFriJ8ArcUUIFGpMvEeMfYVOc81lgbGNTJmPe5hrjkPmQr1q3wLcWj0MWDEKXBKHnsITdFPj48M0U1onPuGZMPvpeQy3kZYgnqxcnryBGdTAfdVdy6iKFBl68hv+Y1kF7HmSWuv3OXED/8y/ee7VZoEN5OmMuFfXlCqzQIk4cTM3eFVdp5nxt+ha1WbE/vNs4B7S0EqIHfIBAoestQZ3qfHoCaS1RbzA3U1/0i36QrcVpZFYq8AJ4tqBu/bvfIHcgpINGtusAgGdzKDACAnJHuYXyNQIZZuVW3uEQgniOlGoVU8dHOGcjz6rQbev9ErRH/1H4huL1C/ZiNH1s1MZGgAAAABJRU5ErkJggg=="
+                                                    height="24"
+                                                    width="24"
+                                                />
+                                            </a>
+                                        </template>
+                                        <template
+                                            x-if="signature.selectedCompany == 1"
+                                        >
+                                            <a
+                                                style="
                                                         text-decoration: none;
                                                         color: transparent;
                                                         margin-top: 5px;
+                                                        border:hidden;
                                                     "
-                                                    id="youtubeLink"
-                                                    class="youtube"
-                                                    href="https://www.youtube.com/user/SpeedlineDK"
-                                                    ><img
-                                                        style="display: inline"
-                                                        shrinktofit="true"
-                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFYSURBVHgBxZU9SgRBEIWfPwiyiIOY20cYEQ2XAQOz1XDNPII3aFNDMzPBG3gCTYz1AuLiAZw1VAOtcrqh7f9mdtkHH8POVr2aqS5qgDlrKSNmQOwTNVGpe1PimXhAD7GZJFriJ8ArcUUIFGpMvEeMfYVOc81lgbGNTJmPe5hrjkPmQr1q3wLcWj0MWDEKXBKHnsITdFPj48M0U1onPuGZMPvpeQy3kZYgnqxcnryBGdTAfdVdy6iKFBl68hv+Y1kF7HmSWuv3OXED/8y/ee7VZoEN5OmMuFfXlCqzQIk4cTM3eFVdp5nxt+ha1WbE/vNs4B7S0EqIHfIBAoestQZ3qfHoCaS1RbzA3U1/0i36QrcVpZFYq8AJ4tqBu/bvfIHcgpINGtusAgGdzKDACAnJHuYXyNQIZZuVW3uEQgniOlGoVU8dHOGcjz6rQbev9ErRH/1H4huL1C/ZiNH1s1MZGgAAAABJRU5ErkJggg=="
-                                                        height="24"
-                                                        width="24"
-                                                /></a>
-                                            </template>
-                                        </td>
-                                    </tr>
-                                </template>
+                                                id="youtubeLink"
+                                                class="youtube"
+                                                href="https://www.youtube.com/user/SpeedlineDK"
+                                                ><img
+                                                    style="display: inline; border:hidden;"
+                                                    shrinktofit="true"
+                                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFYSURBVHgBxZU9SgRBEIWfPwiyiIOY20cYEQ2XAQOz1XDNPII3aFNDMzPBG3gCTYz1AuLiAZw1VAOtcrqh7f9mdtkHH8POVr2aqS5qgDlrKSNmQOwTNVGpe1PimXhAD7GZJFriJ8ArcUUIFGpMvEeMfYVOc81lgbGNTJmPe5hrjkPmQr1q3wLcWj0MWDEKXBKHnsITdFPj48M0U1onPuGZMPvpeQy3kZYgnqxcnryBGdTAfdVdy6iKFBl68hv+Y1kF7HmSWuv3OXED/8y/ee7VZoEN5OmMuFfXlCqzQIk4cTM3eFVdp5nxt+ha1WbE/vNs4B7S0EqIHfIBAoestQZ3qfHoCaS1RbzA3U1/0i36QrcVpZFYq8AJ4tqBu/bvfIHcgpINGtusAgGdzKDACAnJHuYXyNQIZZuVW3uEQgniOlGoVU8dHOGcjz6rQbev9ErRH/1H4huL1C/ZiNH1s1MZGgAAAABJRU5ErkJggg=="
+                                                    height="24"
+                                                    width="24"
+                                                />
+                                            </a>
+                                        </template>
+                                    </td>
+                                </tr>
+                            </template>
                         </tbody>
                     </table>
 
